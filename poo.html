@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Mission Statement Poll</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        .container { max-width: 600px; margin: auto; }
+        .option { margin: 10px 0; text-align: left; }
+        button { padding: 10px 20px; font-size: 16px; margin-top: 10px; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>Vote for the Best Cybersecurity Mission Statement</h2>
+    <p>Select the best statement below and click "Vote"!</p>
+
+    <div class="container">
+        <form id="pollForm">
+            <div class="option"><input type="radio" name="vote" value="Shoaib Sayyad"> Shoaib Sayyad - "Leading your cybersecurity journey with expertise and honesty."</div>
+            <div class="option"><input type="radio" name="vote" value="Ibrahim Dandekar"> Ibrahim Dandekar - "Easing you into a secure future."</div>
+            <div class="option"><input type="radio" name="vote" value="Taha Parkar"> Taha Parkar - "Delivering excellence in robust security with a focus on customer satisfaction."</div>
+            <div class="option"><input type="radio" name="vote" value="Nihal Dalvi"> Nihal Dalvi - "To offer excellent cybersecurity services and opportunities for professionals."</div>
+            <div class="option"><input type="radio" name="vote" value="Tabish Saibole"> Tabish Saibole - "Looking for complete cybersecurity solutions? Just IZYITS!"</div>
+            <div class="option"><input type="radio" name="vote" value="Yasir Dalvi"> Yasir Dalvi - "Your dedicated cybersecurity partner, securing your enterprise at every phase."</div>
+            <div class="option"><input type="radio" name="vote" value="Vilayat Parkar"> Vilayat Parkar - "Protecting People, Assets, and Data."</div>
+            <div class="option"><input type="radio" name="vote" value="Huzaifah Dandekar"> Huzaifah Dandekar - "Protecting digital assets with proactive cybersecurity strategies."</div>
+            <div class="option"><input type="radio" name="vote" value="Zahid Dalvi"> Zahid Dalvi - "Delivering innovative cybersecurity solutions for business protection."</div>
+            <div class="option"><input type="radio" name="vote" value="Taha Diwan"> Taha Diwan - "Setting the gold standard for cyber readiness."</div>
+            <div class="option"><input type="radio" name="vote" value="Bilal Patel"> Bilal Patel - "Cost-effective cybersecurity solutions with reliable quality and support."</div>
+            <div class="option"><input type="radio" name="vote" value="Shadab Shaikh"> Shadab Shaikh - "Stronger Security, Smarter Protection."</div>
+            <div class="option"><input type="radio" name="vote" value="Atif Dalvi"> Atif Dalvi - "Evolving cybersecurity solutions to combat emerging threats."</div>
+            <div class="option"><input type="radio" name="vote" value="Ammar Chogle"> Ammar Chogle - "Your Trusted Guardian in Cybersecurity."</div>
+            <div class="option"><input type="radio" name="vote" value="Usaid Dalvi"> Usaid Dalvi - "Security you can trust, for growth you can count on."</div>
+            <div class="option"><input type="radio" name="vote" value="Arsh Dalvi"> Arsh Dalvi - "IZYITS—Your Security, Our Mission."</div>
+            <div class="option"><input type="radio" name="vote" value="Abdul Rehman Parkar"> Abdul Rehman Parkar - "Stronger security, limitless innovation and boundless growth."</div>
+            <div class="option"><input type="radio" name="vote" value="Mohammed Kazi"> Mohammed Kazi - "Empowering businesses to operate securely and with peace of mind."</div>
+            <div class="option"><input type="radio" name="vote" value="Abdullah Fakih"> Abdullah Fakih - "Empowering businesses with innovative cybersecurity solutions."</div>
+
+            <button type="button" onclick="submitVote()">Vote</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        let votes = {};
+
+        function submitVote() {
+            const selectedOption = document.querySelector('input[name="vote"]:checked');
+            if (!selectedOption) {
+                alert("Please select an option before voting!");
+                return;
+            }
+
+            const choice = selectedOption.value;
+            votes[choice] = (votes[choice] || 0) + 1;
+
+            let resultText = "<h3>Live Results:</h3>";
+            for (let key in votes) {
+                resultText += `<p>${key}: ${votes[key]} votes</p>`;
+            }
+            
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+
+</body>
+</html>
